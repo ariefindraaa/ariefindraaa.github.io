@@ -1,97 +1,96 @@
-// ═══════════════════════════════════════
-//  ARIEF INDRA KUSUMA — PORTFOLIO SCRIPT
-// ═══════════════════════════════════════
+// Arief Indra Kusuma — Portfolio interactions
 
-// ── NAVBAR SCROLL ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+const header = document.getElementById('siteHeader');
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-menu a');
+const backToTop = document.querySelector('.back-to-top');
+
+function updateHeaderState() {
+  const scrolled = window.scrollY > 24;
+  header?.classList.toggle('scrolled', scrolled);
+  backToTop?.classList.toggle('show', window.scrollY > 700);
+}
+
+updateHeaderState();
+window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+navToggle?.addEventListener('click', () => {
+  const isOpen = navMenu?.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+  document.body.classList.toggle('menu-open', Boolean(isOpen));
 });
 
-// ── MOBILE MENU ──
-const toggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-toggle?.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// ── ACTIVE NAV LINK ON SCROLL ──
-const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
-  });
-  navItems.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    navMenu?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
   });
 });
 
-// ── FADE IN ON SCROLL ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+backToTop?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-// ── PROJECT FILTER ──
-const filterBtns = document.querySelectorAll('.filter-btn');
+// Reveal on scroll
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('visible'));
+}
+
+// Active navigation link
+const sections = [...document.querySelectorAll('main section[id]')];
+function setActiveNavLink() {
+  const scrollPosition = window.scrollY + 120;
+  let activeId = sections[0]?.id || '';
+
+  sections.forEach((section) => {
+    if (scrollPosition >= section.offsetTop) {
+      activeId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+  });
+}
+
+setActiveNavLink();
+window.addEventListener('scroll', setActiveNavLink, { passive: true });
+
+// Project filters
+const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.filter;
-    projectCards.forEach(card => {
-      const show = cat === 'all' || card.dataset.category === cat;
-      card.style.display = show ? 'block' : 'none';
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || '').split(' ');
+      const shouldShow = filter === 'all' || categories.includes(filter);
+      card.classList.toggle('hidden', !shouldShow);
     });
   });
 });
 
-// ── SMOOTH COUNTER ──
-function animateCounter(el, target, duration = 1500) {
-  let start = 0;
-  const step = target / (duration / 16);
-  const timer = setInterval(() => {
-    start += step;
-    if (start >= target) { el.textContent = target; clearInterval(timer); return; }
-    el.textContent = Math.floor(start);
-  }, 16);
+// Current year
+const year = document.getElementById('year');
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target;
-      animateCounter(el, parseInt(el.dataset.target));
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-
-// ── CONTACT FORM ──
-const form = document.getElementById('contactForm');
-form?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#059669';
-    form.reset();
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3000);
-  }, 1000);
-});
-
-// ── YEAR IN FOOTER ──
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
