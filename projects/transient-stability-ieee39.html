@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Final project of Arief Indra Kusuma: Random Forest and XGBoost transient stability detection on the IEEE 39-bus system using DIgSILENT PowerFactory simulation data." />
+  <meta name="theme-color" content="#f4f7fb" />
+  <meta property="og:title" content="Transient Stability Detection on the IEEE 39-Bus System | Arief Indra Kusuma" />
+  <meta property="og:description" content="Final project of Arief Indra Kusuma: Random Forest and XGBoost transient stability detection on the IEEE 39-bus system using DIgSILENT PowerFactory simulation data." />
+  <meta property="og:type" content="article" />
+  <title>Transient Stability Detection on the IEEE 39-Bus System | Arief Indra Kusuma</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    // Apply the saved theme before first paint. Default = light corporate.
+    (function () {
+      try {
+        if (localStorage.getItem('aik-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header is-solid" id="siteHeader">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html" aria-label="Arief Indra Kusuma home">
+        <span class="brand-mark">AIK</span>
+        <span class="brand-text">Arief Indra Kusuma<small>Electrical Engineering</small></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html#profile">Profile</a></li>
+        <li><a href="../index.html#career">Role Fit</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+      <a class="nav-action" href="mailto:ariefindrakusuma751@gmail.com?subject=Opportunity%20for%20Arief%20Indra%20Kusuma">Hire / Contact</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+    <section class="project-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span>Transient Stability Detection</span>
+        </nav>
+        <p class="section-label">Final Project &middot; Machine Learning for Power Systems</p>
+        <h1>Transient Stability Detection on the IEEE 39-Bus System</h1>
+        <p class="lead">Machine-learning classifiers trained on DIgSILENT PowerFactory simulation data to decide whether the IEEE 39-bus (New England) system stays stable after a disturbance. The best-performing model reached 99.82% accuracy with an ROC-AUC of 0.9999.</p>
+      <dl class="meta-strip reveal">
+        <div class="meta-item"><dt>Project type</dt><dd>Final Project (Tugas Akhir)</dd></div>
+        <div class="meta-item"><dt>Institution</dt><dd>Sekolah Vokasi UGM</dd></div>
+        <div class="meta-item"><dt>Primary tools</dt><dd>DIgSILENT PowerFactory, Python</dd></div>
+        <div class="meta-item"><dt>Headline result</dt><dd>99.82% accuracy</dd></div>
+      </dl>
+      </div>
+    </section>
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <section id="overview" class="reveal">
+          <h2>Project overview</h2>
+          <p>This is the final project for the S.Tr.T Teknologi Rekayasa Elektro programme at Sekolah Vokasi Universitas Gadjah Mada. The goal was to replace a slow, repeated time-domain stability assessment with a trained classifier that can label a post-disturbance operating condition as stable or unstable almost instantly.</p>
+          <p>The IEEE 39-bus New England test system was used as the study case because it is a widely accepted benchmark, which makes the method reproducible and comparable with published work.</p>
+          <aside class="callout callout-accent">
+            <span class="callout-icon" aria-hidden="true">✅</span>
+            <p><strong>Tooling note:</strong> DIgSILENT PowerFactory is used <strong>only</strong> in this final project, purely as the source of simulation data. The Neera and Lombok studies in this portfolio were built in ETAP.</p>
+          </aside>
+        </section>
+        <section id="problem" class="reveal">
+          <h2>Problem statement</h2>
+          <p>Classical transient stability assessment relies on running a dynamic time-domain simulation for every contingency and operating point. That is accurate but computationally heavy, so it does not scale well to online or near-real-time screening.</p>
+          <p>The question this project answers is simple: can a supervised model, trained on a large set of simulated disturbance scenarios, reproduce the stable / unstable verdict accurately enough to be useful as a fast screening layer?</p>
+        </section>
+        <section id="scope" class="reveal">
+          <h2>Scope &amp; my role</h2>
+          <ul>
+            <li>Built and validated the IEEE 39-bus model in DIgSILENT PowerFactory as the data-generation environment.</li>
+            <li>Designed the scenario matrix (loading conditions, fault locations, fault clearing times) that defines the dataset.</li>
+            <li>Ran the batch of dynamic simulations and exported the resulting operating-condition data.</li>
+            <li>Labelled each scenario as stable or unstable based on the simulated generator rotor-angle behaviour.</li>
+            <li>Prepared the dataset in Python: cleaning, feature preparation, and train / test splitting.</li>
+            <li>Trained, tuned, and compared Random Forest and XGBoost classifiers.</li>
+            <li>Evaluated the models with accuracy, precision, recall, F1-score, and ROC-AUC, then documented the full workflow in the final report.</li>
+          </ul>
+        </section>
+        <section id="tools" class="reveal">
+          <h2>Tools used</h2>
+          <div class="tool-grid">
+            <div class="tool-card"><strong>DIgSILENT PowerFactory</strong><span>IEEE 39-bus modelling and dynamic simulation — data generation only</span></div>
+            <div class="tool-card"><strong>Python</strong><span>Dataset preparation, training pipeline, and evaluation</span></div>
+            <div class="tool-card"><strong>scikit-learn</strong><span>Random Forest model, metrics, and cross-validation</span></div>
+            <div class="tool-card"><strong>XGBoost</strong><span>Gradient-boosted tree classifier and hyperparameter tuning</span></div>
+            <div class="tool-card"><strong>pandas &amp; NumPy</strong><span>Tabular processing of simulation output</span></div>
+            <div class="tool-card"><strong>Matplotlib</strong><span>ROC curves, confusion matrices, and report figures</span></div>
+          </div>
+        </section>
+        <section id="method" class="reveal">
+          <h2>Method &amp; workflow</h2>
+          <ol class="step-list">
+            <li><strong>Build the benchmark model. </strong>Assemble the IEEE 39-bus system in PowerFactory and verify the base-case load flow against the published benchmark data.</li>
+            <li><strong>Define the scenario matrix. </strong>Vary loading level, fault location, and clearing time so the dataset covers both comfortably stable and clearly unstable operating points.</li>
+            <li><strong>Run the simulation batch. </strong>Execute the dynamic simulations and export the measured quantities that describe each operating condition.</li>
+            <li><strong>Label the outcomes. </strong>Classify each scenario as stable or unstable from the generator rotor-angle response after fault clearing.</li>
+            <li><strong>Prepare the dataset. </strong>Clean the exported data, assemble the feature table, check the class balance, and split into training and testing sets.</li>
+            <li><strong>Train and tune. </strong>Fit Random Forest and XGBoost classifiers and tune the main hyperparameters.</li>
+            <li><strong>Evaluate and compare. </strong>Score both models on the held-out test set using accuracy, precision, recall, F1, and ROC-AUC, then select the best performer.</li>
+            <li><strong>Document. </strong>Write up the methodology, results, and limitations as the final project report.</li>
+          </ol>
+        </section>
+        <section id="results" class="reveal">
+          <h2>Results</h2>
+          <div class="result-grid">
+            <div class="result-card"><strong>99.82%</strong><span>Best model accuracy</span></div>
+            <div class="result-card"><strong>0.9999</strong><span>ROC-AUC</span></div>
+            <div class="result-card"><strong>2</strong><span>Algorithms compared</span></div>
+            <div class="result-card"><strong>IEEE 39-bus</strong><span>Benchmark system</span></div>
+          </div>
+          <ul>
+            <li>The best-performing classifier separates stable from unstable conditions with 99.82% accuracy and an ROC-AUC of 0.9999 on the test set.</li>
+            <li>Both Random Forest and XGBoost handled the task well, which suggests the engineered features carry a strong signal about post-fault stability.</li>
+            <li>Inference is effectively instantaneous compared with running a full time-domain simulation, which is exactly what makes the approach attractive as a screening layer.</li>
+          </ul>
+          <aside class="callout">
+            <span class="callout-icon" aria-hidden="true">⚠️</span>
+            <p>Per-class metrics, the confusion matrix, and the full scenario count come from the final project report and will be added here as figures once the report is cleared for publication.</p>
+          </aside>
+        </section>
+        <section id="gallery" class="reveal">
+          <h2>Documentation gallery</h2>
+          <p>Upload the images below to <code>assets/projects/</code> using these exact filenames and they will replace the empty slots automatically — no HTML editing needed. See <code>ASSET_GUIDE.md</code> for sizing guidance.</p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="../assets/projects/ta-ieee39-single-line.jpg" alt="IEEE 39-bus single-line diagram" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>IEEE 39-bus single-line diagram as modelled in PowerFactory.<br /><code>assets/projects/ta-ieee39-single-line.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/ta-digsilent-simulation.jpg" alt="DIgSILENT dynamic simulation result" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Dynamic simulation setup and rotor-angle response.<br /><code>assets/projects/ta-digsilent-simulation.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/ta-model-evaluation.jpg" alt="Machine learning model evaluation charts" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Model evaluation: confusion matrix and ROC curve.<br /><code>assets/projects/ta-model-evaluation.jpg</code></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section id="lessons" class="reveal">
+          <h2>Lessons learned</h2>
+          <ul>
+            <li>The quality of the scenario matrix matters more than the choice of algorithm — coverage of the operating space is what makes the classifier generalise.</li>
+            <li>Very high scores deserve scepticism. Checking the train / test split for leakage and confirming that unstable cases are genuinely represented was an essential sanity step.</li>
+            <li>Combining a power-system simulation tool with a Python ML pipeline is a practical workflow, and the data export / labelling bridge is where most of the engineering effort actually goes.</li>
+            <li>Documenting assumptions early made the final report far easier to defend.</li>
+          </ul>
+        </section>
+      </div>
+      <aside class="detail-aside">
+        <div class="aside-card reveal">
+          <h2>At a glance</h2>
+          <ul class="fact-list">
+            <li><strong>Role</strong><span>Individual final project</span></li>
+            <li><strong>Study case</strong><span>IEEE 39-bus (New England)</span></li>
+            <li><strong>Data source</strong><span>DIgSILENT PowerFactory</span></li>
+            <li><strong>Models</strong><span>Random Forest, XGBoost</span></li>
+            <li><strong>Best accuracy</strong><span>99.82%</span></li>
+            <li><strong>ROC-AUC</strong><span>0.9999</span></li>
+          </ul>
+        </div>
+        <div class="aside-card reveal">
+          <h3>Related</h3>
+          <ul class="aside-links">
+            <li><a href="lombok-protection-study.html">Lombok protection study</a></li>
+            <li><a href="neera-distribution-masterplan.html">Neera distribution masterplan</a></li>
+            <li><a href="../index.html#projects">All projects</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <nav class="container project-nav" aria-label="Project navigation">
+      <a class="prev" href="patra-jasa-rtct.html"><small>Previous project</small><strong>RTCT Pertamina (Patra Jasa)</strong></a>
+      <a class="next" href="neera-distribution-masterplan.html"><small>Next project</small><strong>Neera Distribution Masterplan</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Arief Indra Kusuma. Built for GitHub Pages.</p>
+      <a href="../index.html#projects">Back to all projects &uarr;</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="../script.js"></script>
+</body>
+</html>

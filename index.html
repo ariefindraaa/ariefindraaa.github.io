@@ -4,11 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Portfolio of Arief Indra Kusuma — Electrical Engineering Technology graduate from Universitas Gadjah Mada focusing on power systems, renewable energy, field commissioning, and machine learning for power systems." />
-  <meta name="theme-color" content="#07111f" />
+  <meta name="theme-color" content="#f4f7fb" />
   <meta property="og:title" content="Arief Indra Kusuma | Electrical Engineering Portfolio" />
   <meta property="og:description" content="Power systems, renewable energy EPC, testing & commissioning, and machine learning for electrical engineering." />
   <meta property="og:type" content="website" />
   <title>Arief Indra Kusuma | Electrical Engineering Portfolio</title>
+  <script>
+    // Apply the saved theme before first paint. Default = light corporate.
+    (function () {
+      try {
+        if (localStorage.getItem('aik-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +32,8 @@
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="Arief Indra Kusuma home">
         <span class="brand-mark">AIK</span>
-        <span class="brand-text">Arief Indra Kusuma</span>
+        <span class="brand-text">Arief Indra Kusuma<small>Electrical Engineering</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#profile">Profile</a></li>
         <li><a href="#career">Role Fit</a></li>
@@ -36,7 +43,19 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
       <a class="nav-action" href="mailto:ariefindrakusuma751@gmail.com?subject=Opportunity%20for%20Arief%20Indra%20Kusuma">Hire / Contact</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
@@ -60,12 +79,17 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View Projects</a>
             <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            <!-- Appears automatically once assets/cv/Arief_Indra_Kusuma_CV.pdf is uploaded. See ASSET_GUIDE.md -->
+            <a class="btn btn-ghost" href="assets/cv/Arief_Indra_Kusuma_CV.pdf" data-cv-link hidden>Download CV</a>
           </div>
         </div>
 
         <aside class="hero-panel reveal" aria-label="Portfolio highlight">
           <div class="portrait-card">
             <div class="portrait-glow" aria-hidden="true"></div>
+            <!-- Drop a photo at assets/img/profile.jpg and it replaces the initials automatically. See ASSET_GUIDE.md -->
+            <img class="portrait-photo" src="assets/img/profile.jpg" alt="Portrait of Arief Indra Kusuma"
+                 onload="this.closest('.portrait-card').classList.add('has-photo')" onerror="this.remove()" />
             <div class="portrait-initials" aria-label="Arief Indra Kusuma initials">AIK</div>
             <div class="availability-card">
               <span class="status-dot"></span>
@@ -198,6 +222,7 @@
                 <li>Joined BCS installation in collaboration with Universitas Mataram in Lombok.</li>
                 <li>Supported multi-point PJUTS and PATS installation in Sumbawa, including mounting, wiring, and commissioning activities.</li>
               </ul>
+              <a class="inline-link" href="projects/dekatama-renewable-energy.html">Read the full case study</a>
             </div>
           </article>
 
@@ -212,6 +237,7 @@
                 <li>Participated in testing and commissioning activities: megger test, AC commissioning, hydrant pressure test, emergency alarm test, and lift load test.</li>
                 <li>Prepared BoQ, AHSP, and Power BI dashboard materials for project progress reporting.</li>
               </ul>
+              <a class="inline-link" href="projects/patra-jasa-rtct.html">Read the full case study</a>
             </div>
           </article>
 
@@ -250,7 +276,7 @@
         <div class="section-head reveal">
           <p class="section-label">Selected Projects</p>
           <h2>Technical portfolio across power, PV, automation, software, and machine learning.</h2>
-          <p>Use the filters to view projects by engineering focus. DIgSILENT is used only for the final project data simulation; Neera and Lombok projects use ETAP.</p>
+          <p>Use the filters to view projects by engineering focus, and open a case study for the full scope, method, and results. DIgSILENT PowerFactory is used only for the final project data simulation; the Neera and Lombok studies use ETAP.</p>
         </div>
         <div class="filter-bar reveal" aria-label="Project filters">
           <button class="filter-btn active" type="button" data-filter="all">All</button>
@@ -269,6 +295,7 @@
               <h3>Transient Stability Detection on IEEE 39-Bus</h3>
               <p>Developed Random Forest and XGBoost models using DIgSILENT PowerFactory simulation data. Best model achieved 99.82% accuracy and ROC-AUC 0.9999.</p>
               <div class="tag-list"><span>Python</span><span>XGBoost</span><span>Random Forest</span><span>DIgSILENT</span></div>
+              <a class="project-link" href="projects/transient-stability-ieee39.html">View case study</a>
             </div>
           </article>
 
@@ -279,6 +306,7 @@
               <h3>Neera Island Distribution System Masterplan</h3>
               <p>Prepared a 10-year distribution-system masterplan for 11 districts, including load growth consideration, reliability indicators, and estimated project budget around USD 14 million.</p>
               <div class="tag-list"><span>ETAP</span><span>Load Flow</span><span>SAIFI / SAIDI</span><span>RAB</span></div>
+              <a class="project-link" href="projects/neera-distribution-masterplan.html">View case study</a>
             </div>
           </article>
 
@@ -289,6 +317,7 @@
               <h3>Lombok Island Power-System Protection Study</h3>
               <p>Analyzed Lombok power-system operation with load flow, 75 Mvar capacitor bank improvement, and protection coordination using OCR and Distance Relay settings.</p>
               <div class="tag-list"><span>ETAP 21</span><span>OCR</span><span>Distance Relay</span><span>150 kV</span></div>
+              <a class="project-link" href="projects/lombok-protection-study.html">View case study</a>
             </div>
           </article>
 
@@ -299,6 +328,18 @@
               <h3>1.3 kWp Hybrid Off-Grid PLTS — KKN-PPM UGM</h3>
               <p>Supported survey, installation, and commissioning of a 1.3 kWp hybrid off-grid solar system at Masjid Pesantren Nurul Huda, Lampung Selatan, in collaboration with PT PLN Nusantara Power.</p>
               <div class="tag-list"><span>PLTS</span><span>Off-Grid</span><span>Commissioning</span><span>KKN UGM</span></div>
+              <a class="project-link" href="projects/plts-hybrid-kkn.html">View case study</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="power">
+            <div class="project-visual"><span>🏗️</span></div>
+            <div class="project-content">
+              <p class="project-type">MEP · Testing &amp; Commissioning</p>
+              <h3>RTCT Pertamina — Electrical Verification &amp; Commissioning</h3>
+              <p>Supported cable sizing verification from the 20 kV medium-voltage system to 400/230 V installation, plus megger, AC, hydrant, alarm, and lift load testing at PT Patra Jasa.</p>
+              <div class="tag-list"><span>Cable Sizing</span><span>Megger Test</span><span>BoQ / AHSP</span><span>Power BI</span></div>
+              <a class="project-link" href="projects/patra-jasa-rtct.html">View case study</a>
             </div>
           </article>
 
@@ -309,6 +350,7 @@
               <h3>BCS, PJUTS, and PATS Field Installation</h3>
               <p>Joined installation work for portable Battery Charging System units in Lombok and multi-point solar public lighting / solar water-pump systems in Sumbawa.</p>
               <div class="tag-list"><span>BCS</span><span>PJUTS</span><span>PATS</span><span>Lombok / Sumbawa</span></div>
+              <a class="project-link" href="projects/dekatama-renewable-energy.html">View case study</a>
             </div>
           </article>
 
@@ -413,7 +455,7 @@
           <article class="skill-group reveal">
             <h3>Software & Data</h3>
             <div class="skill-tags">
-              <span>Python</span><span>XGBoost</span><span>Random Forest</span><span>Flask</span><span>REST API</span><span>Power BI</span><span>Excel</span><span>CustomTkinter</span><span>DIgSILENT PowerFactory</span>
+              <span>Python</span><span>XGBoost</span><span>Random Forest</span><span>Flask</span><span>REST API</span><span>Power BI</span><span>Excel</span><span>CustomTkinter</span><span>DIgSILENT PowerFactory (Final Project)</span>
             </div>
           </article>
         </div>

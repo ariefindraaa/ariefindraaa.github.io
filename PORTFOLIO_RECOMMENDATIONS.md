@@ -4,7 +4,12 @@ Dokumen ini sengaja dipisah dari halaman utama agar portofolio publik tetap terl
 
 ## Strategi tema yang dipakai sekarang
 
-**Tema utama:** profesional untuk fresh graduate Electrical Engineering Technology dengan positioning utama pada:
+**Tema default sekarang: Light Corporate Professional.** Tema ini dipilih supaya
+portofolio terasa bersih, formal, dan mudah dibaca oleh HR dan rekruter — termasuk
+saat dibuka dari HP atau dicetak jadi PDF. Tema gelap tetap tersedia lewat tombol
+toggle di header, dan pilihan pengunjung disimpan di `localStorage`.
+
+**Positioning utama** untuk fresh graduate Electrical Engineering Technology:
 
 1. **Renewable Energy / PV EPC** — paling direkomendasikan karena ada pengalaman Dekatama, PLTS KKN, PLTS Trainer, BCS, PJUTS, dan PATS.
 2. **Power System / Protection** — kuat untuk posisi utility, consultant, atau design engineer karena ada ETAP Neera, ETAP Lombok, dan Tugas Akhir stabilitas transien.
@@ -78,15 +83,16 @@ Dokumen ini sengaja dipisah dari halaman utama agar portofolio publik tetap terl
    Rekomendasi folder: `assets/certificates/`
    Bisa berupa PDF atau gambar, namun hindari data sensitif seperti NIK, alamat lengkap, nomor ijazah, atau tanda tangan yang tidak perlu.
 
-6. **Detail pages per proyek**
-   Untuk meniru portofolio teman secara lebih dekat, buat halaman seperti:
+6. **Detail pages per proyek — SUDAH DIBUAT**
+   Enam halaman detail sudah tersedia:
    - `projects/transient-stability-ieee39.html`
    - `projects/neera-distribution-masterplan.html`
    - `projects/lombok-protection-study.html`
    - `projects/plts-hybrid-kkn.html`
    - `projects/patra-jasa-rtct.html`
+   - `projects/dekatama-renewable-energy.html`
 
-   Struktur yang disarankan per halaman:
+   Semua memakai struktur yang sama:
    - Project overview.
    - Problem statement.
    - Scope / role pribadi.
@@ -95,6 +101,9 @@ Dokumen ini sengaja dipisah dari halaman utama agar portofolio publik tetap terl
    - Results.
    - Documentation gallery.
    - Lessons learned.
+
+   Yang masih kurang di halaman-halaman ini hanyalah **foto dan screenshot**.
+   Slot galerinya sudah menunggu nama file tertentu — lihat `ASSET_GUIDE.md`.
 
 ## Konten yang masih perlu diklarifikasi sebelum dipublikasikan detail
 
@@ -106,19 +115,20 @@ Dokumen ini sengaja dipisah dari halaman utama agar portofolio publik tetap terl
 - Apakah nomor WhatsApp yang dipakai di portofolio sudah nomor utama untuk rekruter.
 - Apakah nama proyek RTCT Pertamina dan dokumentasi lapangan boleh ditampilkan secara publik.
 
-## Alternatif tema yang bisa dipilih nanti
+## Alternatif tema
 
-### Alternatif A — Professional Dark Energy Theme (yang dipakai sekarang)
-
-**Cocok untuk:** renewable energy, power systems, EPC, MEP, dan engineering roles.
-**Kesan:** modern, teknikal, serius, siap industri.
-**Warna:** navy, hijau energi, biru elektrik.
-
-### Alternatif B — Clean Light Corporate Theme
+### Alternatif B — Clean Light Corporate Theme (DEFAULT sekarang)
 
 **Cocok untuk:** perusahaan BUMN, konsultan, MEP, dan HR yang menyukai tampilan sederhana.
 **Kesan:** formal, bersih, mudah dicetak, sangat readable.
 **Warna:** putih, abu muda, biru PLN, aksen hijau.
+
+### Alternatif A — Professional Dark Energy Theme (tersedia lewat toggle)
+
+**Cocok untuk:** renewable energy, power systems, EPC, MEP, dan engineering roles.
+**Kesan:** modern, teknikal, serius, siap industri.
+**Warna:** navy, hijau energi, biru elektrik.
+**Status:** tetap bisa diakses kapan saja lewat tombol dark mode di header.
 
 ### Alternatif C — Solar EPC Visual Theme
 
@@ -134,15 +144,30 @@ Dokumen ini sengaja dipisah dari halaman utama agar portofolio publik tetap terl
 
 ## Rekomendasi prioritas berikutnya
 
-1. **Pakai versi sekarang sebagai portfolio utama dulu** karena sudah cukup profesional untuk dicantumkan di CV dan LinkedIn.
-2. Tambahkan foto profil dan CV PDF agar terlihat lebih lengkap.
-3. Buat 4 halaman detail pertama: TA, Neera, Lombok, PLTS KKN.
-4. Tambahkan dokumentasi foto lapangan secara bertahap.
+1. **Pakai versi sekarang sebagai portfolio utama** karena sudah cukup profesional untuk dicantumkan di CV dan LinkedIn.
+2. Upload `assets/img/profile.jpg` dan `assets/cv/Arief_Indra_Kusuma_CV.pdf`.
+   Keduanya langsung aktif tanpa perlu edit HTML — lihat `ASSET_GUIDE.md`.
+3. Isi slot galeri di enam halaman detail proyek yang sudah dibuat.
+4. Tambahkan dokumentasi foto lapangan secara bertahap, mulai dari PLTS KKN
+   karena paling aman dipublikasikan.
 5. Untuk setiap lamaran, arahkan narasi portofolio sesuai role:
    - PV Engineer → tonjolkan PLTS, BCS, PJUTS, PATS, Dekatama, KKN.
    - Protection Engineer → tonjolkan Lombok, Neera, ETAP, TA.
    - MEP / Site Engineer → tonjolkan Patra Jasa, T&C, kabel, BoQ, AHSP.
    - ML / Data Engineer energi → tonjolkan TA, Infinite Learning, Power BI, Python.
+
+## Status pengerjaan
+
+| Item | Status |
+| --- | --- |
+| Tema default light corporate professional | Selesai |
+| Dark mode toggle (tersimpan di `localStorage`) | Selesai |
+| Homepage tetap satu halaman di `index.html` | Selesai |
+| Enam halaman detail proyek di `projects/` | Selesai |
+| Struktur folder `assets/` | Selesai |
+| `ASSET_GUIDE.md` | Selesai |
+| `PORTFOLIO_RECOMMENDATIONS.md` | Selesai |
+| Foto profil, CV PDF, foto lapangan, screenshot teknis | Menunggu upload |
 
 ## Catatan koreksi penting
 
