@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="A 10-year electricity distribution masterplan for 11 districts on Neera Island, modelled in ETAP 12.6 with load growth, reliability indicators, and budget estimation." />
+  <meta name="theme-color" content="#f4f7fb" />
+  <meta property="og:title" content="Neera Island Distribution System Masterplan | Arief Indra Kusuma" />
+  <meta property="og:description" content="A 10-year electricity distribution masterplan for 11 districts on Neera Island, modelled in ETAP 12.6 with load growth, reliability indicators, and budget estimation." />
+  <meta property="og:type" content="article" />
+  <title>Neera Island Distribution System Masterplan | Arief Indra Kusuma</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    // Apply the saved theme before first paint. Default = light corporate.
+    (function () {
+      try {
+        if (localStorage.getItem('aik-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header is-solid" id="siteHeader">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html" aria-label="Arief Indra Kusuma home">
+        <span class="brand-mark">AIK</span>
+        <span class="brand-text">Arief Indra Kusuma<small>Electrical Engineering</small></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html#profile">Profile</a></li>
+        <li><a href="../index.html#career">Role Fit</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+      <a class="nav-action" href="mailto:ariefindrakusuma751@gmail.com?subject=Opportunity%20for%20Arief%20Indra%20Kusuma">Hire / Contact</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+    <section class="project-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span>Neera Distribution Masterplan</span>
+        </nav>
+        <p class="section-label">Power Distribution &middot; ETAP 12.6</p>
+        <h1>Neera Island Distribution System Masterplan</h1>
+        <p class="lead">A ten-year distribution-system masterplan covering 11 districts: demand growth projection, network modelling and load flow in ETAP 12.6, reliability indicators, and an estimated project budget of around USD 14 million.</p>
+      <dl class="meta-strip reveal">
+        <div class="meta-item"><dt>Project type</dt><dd>Power system design study</dd></div>
+        <div class="meta-item"><dt>Software</dt><dd>ETAP 12.6</dd></div>
+        <div class="meta-item"><dt>Planning horizon</dt><dd>10 years &middot; 11 districts</dd></div>
+        <div class="meta-item"><dt>Budget estimate</dt><dd>~USD 14 million</dd></div>
+      </dl>
+      </div>
+    </section>
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <section id="overview" class="reveal">
+          <h2>Project overview</h2>
+          <p>This study develops a long-term development plan for the electricity distribution system of Neera Island. Rather than solving a single operating condition, the objective was to produce a staged roadmap: what the network has to look like now, and how it has to grow over a ten-year horizon as demand increases across 11 districts.</p>
+          <p>The deliverable combined a technical model, a reliability assessment, and a cost estimate so that the plan could be discussed in both engineering and budgeting terms.</p>
+          <aside class="callout callout-accent">
+            <span class="callout-icon" aria-hidden="true">✅</span>
+            <p><strong>Tooling note:</strong> this masterplan was built in <strong>ETAP 12.6</strong>, not DIgSILENT. DIgSILENT PowerFactory appears only in the final project on transient stability.</p>
+          </aside>
+        </section>
+        <section id="problem" class="reveal">
+          <h2>Problem statement</h2>
+          <p>An island distribution network has to serve geographically spread districts with limited interconnection, while demand keeps growing. Planning each year in isolation leads to reactive, expensive reinforcement.</p>
+          <p>The study therefore had to answer three linked questions: where will the load be in ten years, which parts of the network will violate voltage or loading limits first, and what does it cost to stay ahead of that curve while keeping service reliability acceptable.</p>
+        </section>
+        <section id="scope" class="reveal">
+          <h2>Scope &amp; my role</h2>
+          <ul>
+            <li>Compiled the existing load inventory and the service area data for all 11 districts.</li>
+            <li>Projected demand growth across the ten-year planning horizon.</li>
+            <li>Built the distribution network model and single-line diagram in ETAP 12.6.</li>
+            <li>Ran load-flow studies for the base case and for the projected future years.</li>
+            <li>Identified voltage-profile and equipment-loading violations, and proposed staged reinforcement.</li>
+            <li>Evaluated system reliability using standard distribution indicators (SAIFI and SAIDI).</li>
+            <li>Prepared the budget estimate (RAB) for the proposed development stages.</li>
+          </ul>
+        </section>
+        <section id="tools" class="reveal">
+          <h2>Tools used</h2>
+          <div class="tool-grid">
+            <div class="tool-card"><strong>ETAP 12.6</strong><span>Network modelling, load flow, and reliability assessment</span></div>
+            <div class="tool-card"><strong>Single-line diagram</strong><span>Network configuration and staged development layout</span></div>
+            <div class="tool-card"><strong>Microsoft Excel</strong><span>Load inventory, demand projection, and cost build-up</span></div>
+            <div class="tool-card"><strong>Reliability indices</strong><span>SAIFI and SAIDI as the service-quality measure</span></div>
+          </div>
+        </section>
+        <section id="method" class="reveal">
+          <h2>Method &amp; workflow</h2>
+          <ol class="step-list">
+            <li><strong>Collect the baseline. </strong>Gather existing network data and the load inventory for each of the 11 districts.</li>
+            <li><strong>Forecast demand. </strong>Project the load growth over the ten-year horizon to define the planning target for each stage.</li>
+            <li><strong>Model the network. </strong>Build the distribution system in ETAP 12.6, including feeders, transformers, and the single-line configuration.</li>
+            <li><strong>Run load-flow studies. </strong>Analyse the base case and each future planning year to obtain voltage profiles and equipment loading.</li>
+            <li><strong>Screen for violations. </strong>Flag the buses and branches that fall outside acceptable voltage or loading limits as demand grows.</li>
+            <li><strong>Plan the reinforcement. </strong>Define the network additions and upgrades needed per stage so the system stays within limits across the horizon.</li>
+            <li><strong>Assess reliability. </strong>Evaluate SAIFI and SAIDI to check that the proposed configuration improves service continuity, not just capacity.</li>
+            <li><strong>Estimate the cost. </strong>Build the budget estimate for the staged plan, arriving at a total in the order of USD 14 million.</li>
+          </ol>
+        </section>
+        <section id="results" class="reveal">
+          <h2>Results</h2>
+          <div class="result-grid">
+            <div class="result-card"><strong>11</strong><span>Districts covered</span></div>
+            <div class="result-card"><strong>10 yr</strong><span>Planning horizon</span></div>
+            <div class="result-card"><strong>~USD 14M</strong><span>Estimated project budget</span></div>
+            <div class="result-card"><strong>SAIFI / SAIDI</strong><span>Reliability indicators used</span></div>
+          </div>
+          <ul>
+            <li>A staged ten-year development plan that keeps voltage and loading within acceptable limits as district demand grows.</li>
+            <li>A reliability assessment expressed in SAIFI and SAIDI, so the plan can be argued on service quality rather than capacity alone.</li>
+            <li>A budget estimate of roughly USD 14 million covering the proposed development stages.</li>
+          </ul>
+          <aside class="callout">
+            <span class="callout-icon" aria-hidden="true">⚠️</span>
+            <p>Detailed figures — per-district load values, substation counts, feeder lengths, and the line-by-line cost breakdown — are kept out of this public page until it is confirmed which numbers may be published.</p>
+          </aside>
+        </section>
+        <section id="gallery" class="reveal">
+          <h2>Documentation gallery</h2>
+          <p>Upload the images below to <code>assets/projects/</code> using these exact filenames and they will replace the empty slots automatically. Blur or crop anything that should not be public.</p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="../assets/projects/neera-single-line.jpg" alt="Neera distribution single-line diagram in ETAP" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Distribution single-line diagram modelled in ETAP 12.6.<br /><code>assets/projects/neera-single-line.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/neera-load-flow.jpg" alt="ETAP load flow result for Neera Island" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Load-flow result showing the voltage profile across feeders.<br /><code>assets/projects/neera-load-flow.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/neera-reliability.jpg" alt="Reliability index summary" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Reliability assessment summary (SAIFI / SAIDI).<br /><code>assets/projects/neera-reliability.jpg</code></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section id="lessons" class="reveal">
+          <h2>Lessons learned</h2>
+          <ul>
+            <li>Masterplanning is a forecasting exercise as much as an electrical one — the growth assumption drives nearly every downstream decision.</li>
+            <li>Staging the investment matters: splitting reinforcement into periods makes a large programme financially realistic.</li>
+            <li>Reliability indices translate engineering work into language that non-technical stakeholders actually respond to.</li>
+            <li>Keeping the ETAP model, the load spreadsheet, and the cost estimate consistent with each other required disciplined version control of the input data.</li>
+          </ul>
+        </section>
+      </div>
+      <aside class="detail-aside">
+        <div class="aside-card reveal">
+          <h2>At a glance</h2>
+          <ul class="fact-list">
+            <li><strong>Role</strong><span>Power system planning &amp; analysis</span></li>
+            <li><strong>Software</strong><span>ETAP 12.6</span></li>
+            <li><strong>Coverage</strong><span>11 districts</span></li>
+            <li><strong>Horizon</strong><span>10 years</span></li>
+            <li><strong>Budget estimate</strong><span>~USD 14 million</span></li>
+            <li><strong>Key outputs</strong><span>Load flow, SAIFI / SAIDI, RAB</span></li>
+          </ul>
+        </div>
+        <div class="aside-card reveal">
+          <h3>Related</h3>
+          <ul class="aside-links">
+            <li><a href="lombok-protection-study.html">Lombok protection study</a></li>
+            <li><a href="transient-stability-ieee39.html">Transient stability detection</a></li>
+            <li><a href="../index.html#projects">All projects</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <nav class="container project-nav" aria-label="Project navigation">
+      <a class="prev" href="transient-stability-ieee39.html"><small>Previous project</small><strong>Transient Stability Detection</strong></a>
+      <a class="next" href="lombok-protection-study.html"><small>Next project</small><strong>Lombok Protection Study</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Arief Indra Kusuma. Built for GitHub Pages.</p>
+      <a href="../index.html#projects">Back to all projects &uarr;</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="../script.js"></script>
+</body>
+</html>

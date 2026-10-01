@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Load-flow analysis, 75 Mvar capacitor-bank improvement, and protection coordination with overcurrent and distance relays for the Lombok 150 kV system, modelled in ETAP 21." />
+  <meta name="theme-color" content="#f4f7fb" />
+  <meta property="og:title" content="Lombok Island Power-System Protection Study | Arief Indra Kusuma" />
+  <meta property="og:description" content="Load-flow analysis, 75 Mvar capacitor-bank improvement, and protection coordination with overcurrent and distance relays for the Lombok 150 kV system, modelled in ETAP 21." />
+  <meta property="og:type" content="article" />
+  <title>Lombok Island Power-System Protection Study | Arief Indra Kusuma</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    // Apply the saved theme before first paint. Default = light corporate.
+    (function () {
+      try {
+        if (localStorage.getItem('aik-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header is-solid" id="siteHeader">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html" aria-label="Arief Indra Kusuma home">
+        <span class="brand-mark">AIK</span>
+        <span class="brand-text">Arief Indra Kusuma<small>Electrical Engineering</small></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html#profile">Profile</a></li>
+        <li><a href="../index.html#career">Role Fit</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+      <a class="nav-action" href="mailto:ariefindrakusuma751@gmail.com?subject=Opportunity%20for%20Arief%20Indra%20Kusuma">Hire / Contact</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+    <section class="project-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span>Lombok Protection Study</span>
+        </nav>
+        <p class="section-label">Protection Study &middot; ETAP 21</p>
+        <h1>Lombok Island Power-System Protection Study</h1>
+        <p class="lead">An operational study of the Lombok power system: load-flow analysis of the 150 kV network, voltage-profile improvement using a 75 Mvar capacitor bank, and protection coordination based on overcurrent (OCR) and distance relay settings.</p>
+      <dl class="meta-strip reveal">
+        <div class="meta-item"><dt>Project type</dt><dd>Protection &amp; operation study</dd></div>
+        <div class="meta-item"><dt>Software</dt><dd>ETAP 21</dd></div>
+        <div class="meta-item"><dt>System</dt><dd>Lombok 150 kV network</dd></div>
+        <div class="meta-item"><dt>Focus</dt><dd>Load flow + relay coordination</dd></div>
+      </dl>
+      </div>
+    </section>
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <section id="overview" class="reveal">
+          <h2>Project overview</h2>
+          <p>This study looks at the Lombok island transmission system from two angles at once: whether the network operates within acceptable voltage limits, and whether its protection scheme clears faults selectively.</p>
+          <p>The two questions are connected. Reactive compensation changes the power flow and the voltage profile, which in turn changes the fault levels that relay settings have to be coordinated against.</p>
+          <aside class="callout callout-accent">
+            <span class="callout-icon" aria-hidden="true">✅</span>
+            <p><strong>Tooling note:</strong> this protection study was carried out in <strong>ETAP 21</strong>, not DIgSILENT. DIgSILENT PowerFactory is used only in the final project on transient stability.</p>
+          </aside>
+        </section>
+        <section id="problem" class="reveal">
+          <h2>Problem statement</h2>
+          <p>A relatively long 150 kV island network tends to suffer voltage-profile problems at the electrically remote end, especially under heavy loading, and reactive support is the usual remedy.</p>
+          <p>At the same time the protection scheme has to stay selective: the relay closest to a fault should operate first, with upstream relays acting only as backup. Settings therefore have to be verified against the actual short-circuit levels of the network as it is operated.</p>
+        </section>
+        <section id="scope" class="reveal">
+          <h2>Scope &amp; my role</h2>
+          <ul>
+            <li>Modelled the Lombok 150 kV system in ETAP 21, including generation, lines, and substation configuration.</li>
+            <li>Ran load-flow studies to evaluate the bus voltage profile and line loading.</li>
+            <li>Analysed the effect of a 75 Mvar capacitor bank as reactive compensation to improve the voltage profile.</li>
+            <li>Performed short-circuit analysis to obtain the fault current levels used as the basis for relay settings.</li>
+            <li>Determined overcurrent relay (OCR) settings: pickup current, curve characteristic, and time multiplier.</li>
+            <li>Determined distance relay zone settings for the protected line sections.</li>
+            <li>Verified selectivity and backup behaviour through the time-current coordination curves.</li>
+          </ul>
+        </section>
+        <section id="tools" class="reveal">
+          <h2>Tools used</h2>
+          <div class="tool-grid">
+            <div class="tool-card"><strong>ETAP 21</strong><span>Network modelling, load flow, short circuit, and device coordination</span></div>
+            <div class="tool-card"><strong>Load flow module</strong><span>Bus voltage profile and line loading evaluation</span></div>
+            <div class="tool-card"><strong>Short-circuit module</strong><span>Fault current levels as the basis for relay settings</span></div>
+            <div class="tool-card"><strong>Star coordination</strong><span>Time-current curves for OCR and distance relay checking</span></div>
+            <div class="tool-card"><strong>Microsoft Excel</strong><span>Setting calculations and comparison tables</span></div>
+          </div>
+        </section>
+        <section id="method" class="reveal">
+          <h2>Method &amp; workflow</h2>
+          <ol class="step-list">
+            <li><strong>Build the system model. </strong>Represent the Lombok 150 kV network in ETAP 21 with its generation, transmission lines, and substations.</li>
+            <li><strong>Run the base-case load flow. </strong>Evaluate the voltage profile and line loading of the network as operated.</li>
+            <li><strong>Study the reactive compensation. </strong>Apply the 75 Mvar capacitor bank and re-run the load flow to quantify the improvement in the voltage profile.</li>
+            <li><strong>Compute fault levels. </strong>Run short-circuit analysis at the relevant buses to obtain the currents the protection has to respond to.</li>
+            <li><strong>Set the overcurrent relays. </strong>Determine pickup, curve type, and time multiplier settings so each relay protects its own zone with an appropriate grading margin.</li>
+            <li><strong>Set the distance relays. </strong>Define the protection zones and their reach for the relevant line sections.</li>
+            <li><strong>Check coordination. </strong>Plot and review the time-current curves to confirm the correct operating sequence between primary and backup protection.</li>
+          </ol>
+        </section>
+        <section id="results" class="reveal">
+          <h2>Results</h2>
+          <div class="result-grid">
+            <div class="result-card"><strong>75 Mvar</strong><span>Capacitor bank studied</span></div>
+            <div class="result-card"><strong>150 kV</strong><span>System voltage level</span></div>
+            <div class="result-card"><strong>OCR + Distance</strong><span>Protection schemes coordinated</span></div>
+            <div class="result-card"><strong>ETAP 21</strong><span>Analysis platform</span></div>
+          </div>
+          <ul>
+            <li>The 75 Mvar capacitor bank measurably improves the system voltage profile compared with the uncompensated base case.</li>
+            <li>Overcurrent and distance relay settings were derived from the calculated fault levels and checked for selectivity using the coordination curves.</li>
+            <li>The study produced a consistent setting set in which backup protection follows primary protection with an appropriate grading margin.</li>
+          </ul>
+          <aside class="callout">
+            <span class="callout-icon" aria-hidden="true">⚠️</span>
+            <p>Exact bus voltages, fault-current values, and individual relay settings are held back from this public page until it is confirmed which figures may be published.</p>
+          </aside>
+        </section>
+        <section id="gallery" class="reveal">
+          <h2>Documentation gallery</h2>
+          <p>Upload the images below to <code>assets/projects/</code> using these exact filenames and they will replace the empty slots automatically.</p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="../assets/projects/lombok-single-line.jpg" alt="Lombok 150 kV single-line diagram in ETAP" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Lombok 150 kV system modelled in ETAP 21.<br /><code>assets/projects/lombok-single-line.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/lombok-load-flow.jpg" alt="ETAP load flow result for the Lombok system" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Load-flow result before and after capacitor-bank compensation.<br /><code>assets/projects/lombok-load-flow.jpg</code></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="../assets/projects/lombok-relay-coordination.jpg" alt="Relay coordination curve" loading="lazy"
+                   onerror="this.parentElement.classList.add('is-empty'); this.remove();" />
+              <figcaption>Time-current coordination curves for OCR and distance relays.<br /><code>assets/projects/lombok-relay-coordination.jpg</code></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section id="lessons" class="reveal">
+          <h2>Lessons learned</h2>
+          <ul>
+            <li>Protection settings are only as trustworthy as the short-circuit study behind them — the network model has to be right first.</li>
+            <li>Reactive compensation and protection cannot be designed in isolation; changing one changes the conditions the other has to handle.</li>
+            <li>Reading coordination curves is a fast way to catch selectivity mistakes that are hard to see in a table of settings.</li>
+            <li>Documenting the assumption behind every setting makes the study reviewable by someone who was not involved in building the model.</li>
+          </ul>
+        </section>
+      </div>
+      <aside class="detail-aside">
+        <div class="aside-card reveal">
+          <h2>At a glance</h2>
+          <ul class="fact-list">
+            <li><strong>Role</strong><span>Protection &amp; system analysis</span></li>
+            <li><strong>Software</strong><span>ETAP 21</span></li>
+            <li><strong>Voltage level</strong><span>150 kV</span></li>
+            <li><strong>Compensation</strong><span>75 Mvar capacitor bank</span></li>
+            <li><strong>Protection</strong><span>OCR + distance relay</span></li>
+            <li><strong>Studies</strong><span>Load flow, short circuit, coordination</span></li>
+          </ul>
+        </div>
+        <div class="aside-card reveal">
+          <h3>Related</h3>
+          <ul class="aside-links">
+            <li><a href="neera-distribution-masterplan.html">Neera distribution masterplan</a></li>
+            <li><a href="transient-stability-ieee39.html">Transient stability detection</a></li>
+            <li><a href="../index.html#projects">All projects</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <nav class="container project-nav" aria-label="Project navigation">
+      <a class="prev" href="neera-distribution-masterplan.html"><small>Previous project</small><strong>Neera Distribution Masterplan</strong></a>
+      <a class="next" href="plts-hybrid-kkn.html"><small>Next project</small><strong>1.3 kWp Hybrid PLTS</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Arief Indra Kusuma. Built for GitHub Pages.</p>
+      <a href="../index.html#projects">Back to all projects &uarr;</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+  <script src="../script.js"></script>
+</body>
+</html>
