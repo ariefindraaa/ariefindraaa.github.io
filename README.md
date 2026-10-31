@@ -4,7 +4,8 @@ Professional GitHub Pages portfolio for Arief Indra Kusuma, Electrical Engineeri
 
 ## Files
 
-- `index.html` — main portfolio page.
+- `index.html` — landing page (ringkasan singkat dan pintu masuk ke portfolio).
+- `portfolio/index.html` — halaman portfolio lengkap (profil, role fit, pengalaman, proyek, skill, pendidikan, kontak).
 - `style.css` — professional dark energy theme.
 - `script.js` — navigation, scroll reveal, and project filters.
 - `PORTFOLIO_RECOMMENDATIONS.md` — content audit, recommended alternatives, and next steps.
@@ -14,7 +15,8 @@ Professional GitHub Pages portfolio for Arief Indra Kusuma, Electrical Engineeri
 This repository is intended for GitHub Pages at:
 
 ```text
-https://ariefindraaa.github.io/
+https://ariefindraaa.github.io/           → landing page
+https://ariefindraaa.github.io/portfolio/ → portfolio lengkap
 ```
 
 Use GitHub Pages with source branch `main` and folder `/ (root)` after merging the working branch.
