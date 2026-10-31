@@ -1360,3 +1360,49 @@ h3 {
   }
 
 }
+
+/* Navigation: switch to the hamburger menu up to 1200px.
+   The portfolio menu has eight items plus the brand and CTA, which overflow on mid-size desktops. */
+@media (max-width: 1200px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 1rem;
+    right: 1rem;
+    display: grid;
+    gap: 0.25rem;
+    max-height: calc(100vh - var(--header-height) - 2rem);
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+    padding: 0.7rem;
+    background: rgba(var(--ink-rgb), 0.96);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu a {
+    display: block;
+    border-radius: 0.85rem;
+    padding: 0.85rem 1rem;
+    color: var(--text-soft);
+  }
+
+  .nav-action {
+    display: none;
+  }
+}
